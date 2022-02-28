@@ -5,14 +5,14 @@ public class Task1b {
         Scanner object=new Scanner(System.in);
         char decision='y';
         do{
-        numberOutput();
+        numberInput();
         System.out.println("Would you like to start again? (y-Yes)(n-No)");
         System.out.print("Answer:");
         decision=object.next().charAt(0);
     }while((decision!='N')&&(decision!='n'));
 
     }
-    public static void numberOutput()
+    public static void numberInput()
     {
         Scanner object=new Scanner(System.in);
         int number;
