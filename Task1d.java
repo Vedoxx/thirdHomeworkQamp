@@ -30,7 +30,7 @@ public class Task1d {
         char mathOperations;
         System.out.println(" Which operation would you like to use: *,/,+,-?");
         mathOperations=object.next().charAt(0);
-        while((mathOperations!='*')&&(mathOperations!='/')&(mathOperations!='+')&&(mathOperations!='-')) {
+        while((mathOperations!='*')&&(mathOperations!='/')&&(mathOperations!='+')&&(mathOperations!='-')) {
             System.out.println(" Which operation would you like to use: *,/,+,-?");
             mathOperations=object.next().charAt(0);
         }
