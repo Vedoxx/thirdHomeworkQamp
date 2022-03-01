@@ -41,30 +41,14 @@ public class Task1gBonus {
         do {
             System.out.println(" Which operation would you like to use: *,/,+,-,=?");
             mathOperations=object.next().charAt(0);
-            while((mathOperations!='*')&&(mathOperations!='/')&&(mathOperations!='+')&&(mathOperations!='-')&&(mathOperations!='=')) {
-                System.out.println(" Which operation would you like to use: *,/,+,-,=?");
-                mathOperations=object.next().charAt(0);
-            }
-            if(mathOperations=='=') {
+            mathOperatorCheck(mathOperations);
+           if(mathOperations=='=') {
                 break;
             }
             object.nextLine();
             System.out.print("Please enter integer:");
             addNumbers = object.nextInt();
-            switch (mathOperations) {
-                case '+':
-                    total=(total+addNumbers);
-                    break;
-                case '-':
-                    total=(total-addNumbers);
-                    break;
-                case '/':
-                    total=(total/addNumbers);
-                    break;
-                case '*':
-                    total=(total*addNumbers);
-                    break;
-            }
+            total=mathOperation(mathOperations,addNumbers,total);
         }while(mathOperations!='=');
         System.out.println("Calculator Result is "+total);
     }
@@ -77,31 +61,40 @@ public class Task1gBonus {
         do {
             System.out.println(" Which operation would you like to use: *,/,+,-,=?");
             mathOperations=object.next().charAt(0);
-            while((mathOperations!='*')&&(mathOperations!='/')&&(mathOperations!='+')&&(mathOperations!='-')&&(mathOperations!='=')) {
-                System.out.println(" Which operation would you like to use: *,/,+,-,=?");
-                mathOperations=object.next().charAt(0);
-            }
+           mathOperatorCheck(mathOperations);
             if(mathOperations=='=') {
                 break;
             }
             object.nextLine();
             System.out.print("Please enter integer:");
             addNumbers = object.nextInt();
-            switch (mathOperations) {
-                case '+':
-                    total=(total+addNumbers);
-                    break;
-                case '-':
-                    total=(total-addNumbers);
-                    break;
-                case '/':
-                    total=(total/addNumbers);
-                    break;
-                case '*':
-                    total=(total*addNumbers);
-                    break;
-            }
+            total=mathOperation(mathOperations,addNumbers,total);
         }while(mathOperations!='=');
         System.out.println("Calculator Result is "+total);
+    }
+    public static int mathOperation(char mathoperation,int addNumbers,int total) {
+        switch (mathoperation) {
+            case '+':
+                total=(total+addNumbers);
+                break;
+            case '-':
+                total=(total-addNumbers);
+                break;
+            case '/':
+                total=(total/addNumbers);
+                break;
+            case '*':
+                total=(total*addNumbers);
+                break;
+
+        }
+        return total;
+    }
+    public static void mathOperatorCheck(char mathOperations){
+        Scanner object = new Scanner(System.in);
+        while((mathOperations!='*')&&(mathOperations!='/')&&(mathOperations!='+')&&(mathOperations!='-')&&(mathOperations!='=')) {
+            System.out.println(" Which operation would you like to use: *,/,+,-,=?");
+            mathOperations=object.next().charAt(0);
+        }
     }
 }
